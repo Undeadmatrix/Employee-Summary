@@ -242,7 +242,7 @@ function startApp() {
     // call function 'render' passing [your_team_members] array as input argument
     let HTMLCode = render(teamMembers);
     // use the return value from render function as data to fs.writeFileSync function
-​
+    fs.writeFileSync("index.html", HTMLCode);
   }
 ​
   createEmpManager();
