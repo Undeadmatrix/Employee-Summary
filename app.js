@@ -13,7 +13,7 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-
+const team = [];
 
 function getManagerInput()
 {
@@ -41,6 +41,7 @@ function getManagerInput()
         }
     ]).then(function(response)
     {
+        let 
         manName = response.manName;
         manID = response.manID;
         manEmail = response.manEmail;
