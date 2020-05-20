@@ -26,40 +26,55 @@ function startApp() {
       .prompt([
         {
           // ask for manager's name
-​
+            type: "input",
+            message: "What's this employee's name?",
+            name: "manName"
           // validate user input for not a empty string. return true or if false, return a message
-​
+
         },
         {
           // ask for manager's id
- 
+          type: "input",
+          message: "What is the employee ID?",
+          name: "manID"
           // validate user input for numbers; return true or if false, return a message
 ​
         },
         {
           // ask for manager's email
-​
+​            type: "input",
+            message: "What is this employee's email?",
+            name: "manEmail"
           // validate user input for correct email format; return true or if false, return a message
 ​
         },
         {
           // ask for manager's office number
-​
+​            type: "input",
+            message: "What is this employee's office number?",
+            name: "manNum"
           // validate user answer for number; return true or if false, return a message
 ​
         },
       ])
       .then((answers) => {
         // create a manager variable to store new manager object created with the imported Manager class
+        const newMan = new Manager
+        (
+          answers.manName,
+          answers.manID,
+          answers.manEmail,
+          answers.manNum
+        );
         // initialize it with user answers for name, id, email, office number.
 ​
 ​
         // push newly created manager object to [your_team_members]
-​
+        teamMembers.push(newMan);
 ​
         // push id from user answer to [id_array]
-​
-​
+        idArray.push(answers.manID);
+        ​
         // call createEmpTeam to start creat the team for the manager
         createEmpTeam();
       });
@@ -105,40 +120,53 @@ function startApp() {
       .prompt([
         {
           // ask for engineer's name
-​
+            type: "input",
+            message: "What's this employee's name?",
+            name: "engName"
           // validate the name is not empty; return true or if false, return a message
 ​
         },
         {
           // ask for engineer's id
-​
-​
+          type: "input",
+          message: "What's this employee's ID?",
+          name: "engID"
           // validate the id is numbers and the id has not been taken; return true or 
           // if false, just return a reminder message
 ​
         },
         {
           // ask for engineer's email
-​
+          type: "input",
+          message: "What's this employee's email?",
+          name: "engEmail"
           // validate email for correct email format
 ​
         },
         {
           // ask for gibhub user name
-​
+          type: "input",
+          message: "What's this employee's github username?",
+          name: "githubName"
           // validate user name is not empty; return true or if false, just return a user friendly message
 ​
         },
       ])
       .then((answers) => {
         // create an engineer object with user answers and store it to a constant variable
-​
+        const newEng = new Engineer
+        (
+          answers.engName,
+          answers.engID,
+          answers.engEmail,
+          answers.githubName
+        )
 ​
         // push newly created engineer object to [your_team_members]
-​
+        teamMembers.push(newEng);
 ​
         // push engineer id to id array
-​
+        idArray.push(answers.engID);
 ​
         // call function createEmpTeam 
         createEmpTeam();
@@ -150,27 +178,34 @@ function startApp() {
       .prompt([
         {
           // ask for intern's name
-​
+          type: "input",
+          message: "What's this employee's name?",
+          name: "intName"
 ​
           // validate name is not empty; return true or if false, return a message
 ​
         },
         {
           // ask for intern's id
- 
-​
+          type: "input",
+          message: "What's this employee's ID?",
+          name: "intID"​
           // validate id is number and id has not been taken; return true or if false, return a message
 ​
         },
         {
           // ask for intern's email
-​
+          type: "input",
+          message: "What's this employee's email?",
+          name: "intEmail"
           // validate email for correct email format; return trur or if false, return a message
 ​
         },
         {
           // ask for intern's school
-​
+          type: "input",
+          message: "What school does this employee go to?",
+          name: "intSchool"
 ​
           // validate school is not empty;  return true or if false, return a message
 ​
@@ -179,13 +214,19 @@ function startApp() {
       .then((answers) => {
 ​
         // create an intern object and intialize it wirh user's answers; assign it to a constant variable
-​
+        const newInt = new Intern
+        (
+          answers.intName,
+          answers.intID,
+          answers.intEmail,
+          answers.intSchool
+        )
 ​
         // push the newly created intern object to [your_team_members]
-​
+        teamMembers.push(newInt);
 ​
         // push id to id array
-​
+        idArray.push(answers.intID);
 ​
         // call function createEmpTeam
         createEmpTeam();
@@ -199,6 +240,7 @@ function startApp() {
     }
 ​
     // call function 'render' passing [your_team_members] array as input argument
+    let HTMLCode = render(teamMembers);
     // use the return value from render function as data to fs.writeFileSync function
 ​
   }
