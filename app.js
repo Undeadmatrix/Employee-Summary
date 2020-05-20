@@ -28,31 +28,57 @@ function startApp() {
           // ask for manager's name
             type: "input",
             message: "What's this employee's name?",
-            name: "manName"
+            name: "manName",
           // validate user input for not a empty string. return true or if false, return a message
-
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid name.";
+            } else {
+              return true;
+            }
+        }
         },
         {
           // ask for manager's id
           type: "input",
           message: "What is the employee ID?",
-          name: "manID"
+          name: "manID",
           // validate user input for numbers; return true or if false, return a message
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid ID.";
+            } else {
+              return true;
+            }
+        }
         },
         {
           // ask for manager's email
             type: "input",
             message: "What is this employee's email?",
-            name: "manEmail"
-          // validate user input for correct email format; return true or if false, return a message          ​
+            name: "manEmail",
+          // validate user input for correct email format; return true or if false, return a message
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid name.";
+            } else {
+              return true;
+            }
+        }
         },
         {
           // ask for manager's office number
             type: "input",
             message: "What is this employee's office number?",
-            name: "manNum"
+            name: "manNum",
           // validate user answer for number; return true or if false, return a message
-
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid name.";
+            } else {
+              return true;
+            }
+        }
         },
       ])
       .then((answers) => {
@@ -118,34 +144,58 @@ function startApp() {
           // ask for engineer's name
             type: "input",
             message: "What's this employee's name?",
-            name: "engName"
+            name: "engName",
           // validate the name is not empty; return true or if false, return a message
-          
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid name.";
+            } else {
+              return true;
+            }
+        }
         },
         {
           // ask for engineer's id
           type: "input",
           message: "What's this employee's ID?",
-          name: "engID"
+          name: "engID",
           // validate the id is numbers and the id has not been taken; return true or 
           // if false, just return a reminder message
-
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid ID.";
+            } else {
+              return true;
+            }
+        }
         },
         {
           // ask for engineer's email
           type: "input",
           message: "What's this employee's email?",
-          name: "engEmail"
+          name: "engEmail",
           // validate email for correct email format
-          
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid email.";
+            } else {
+              return true;
+            }
+        }
         },
         {
           // ask for gibhub user name
           type: "input",
           message: "What's this employee's github username?",
-          name: "githubName"
+          name: "githubName",
           // validate user name is not empty; return true or if false, just return a user friendly message
-
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid username.";
+            } else {
+              return true;
+            }
+        }
         },
       ])
       .then((answers) => {
@@ -176,35 +226,58 @@ function startApp() {
           // ask for intern's name
           type: "input",
           message: "What's this employee's name?",
-          name: "intName"
-          
+          name: "intName",
           // validate name is not empty; return true or if false, return a message
-
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid name.";
+            } else {
+              return true;
+            }
+        }
         },
         {
           // ask for intern's id
           type: "input",
           message: "What's this employee's ID?",
-          name: "intID"
+          name: "intID",
           // validate id is number and id has not been taken; return true or if false, return a message
-          
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid name.";
+            } else {
+              return true;
+            }
+        }
         },
         {
           // ask for intern's email
           type: "input",
           message: "What's this employee's email?",
-          name: "intEmail"
+          name: "intEmail",
           // validate email for correct email format; return trur or if false, return a message
-
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid name.";
+            } else {
+              return true;
+            }
+        }
         },
         {
           // ask for intern's school
           type: "input",
           message: "What school does this employee go to?",
-          name: "intSchool"
+          name: "intSchool",
           
           // validate school is not empty;  return true or if false, return a message
-
+          validate: async (input) => {
+            if (input === "") {
+              return "Please provide a valid name.";
+            } else {
+              return true;
+            }
+        }
         },
       ])
       .then((answers) => {
